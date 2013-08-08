@@ -4,6 +4,7 @@ var htmlfile = "index.html";
 
 var app = express.createServer(express.logger());
 app.use(express.static('/home/ubuntu/bitstarter'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
   var html = fs.readFileSync(htmlfile).toString();
